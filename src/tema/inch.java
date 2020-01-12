@@ -2,14 +2,12 @@ package tema;
 
 public class inch {
     public static void main(String[] args) {
-        inches();
+        System.out.println("The result of the conversion from inches to meters is: " +convert(44)+ " meters");
     }
 
-    public static void inches(){
-        int inch = 27;
+    public static double convert(double inch){
         double y = 0.0254;
-        double meters = inch * y;
-        System.out.println(inch+" inches are "+meters+" meters");
-
+        double convert = inch * y;
+        return convert;
     }
 }
