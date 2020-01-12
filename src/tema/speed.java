@@ -1,24 +1,25 @@
 package tema;
 
-public class speed {
+public class speeds {
     public static void main(String[] args) {
-        speed1();
+        System.out.println("Meters per second: " + speed1(3457, 1, 15,34) + " m/s");
+        System.out.println("Kilometers per hour: " + speed2( 8940, 1, 15,34) + " km/h");
+        System.out.println("Miles per hour: "+speed3(1650, 1,15,34) +" mph");
     }
-        public static void speed1() {
-            double distance = 4500;
-            int hours = 2;
-            int minutes = 13;
-            int seconds = 53;
-            int a = 60;
-            int b = 3600;
-            int totalseconds = seconds + minutes * a + hours * b;
-            int totalhours = hours + minutes / a + seconds / b;
-            double km = distance / 1000;
-            double speed1 = (distance / totalseconds);
-            double speed2 = (km / totalhours);
-            double speed3 = (km / totalhours)/1.609;
-            System.out.println("Meters per second: " + speed1 + " m/s");
-            System.out.println("Kilometers per hour: " + speed2 + " km/h");
-            System.out.println("Miles per hour: "+speed3+" mph");
+
+    public static double speed1(int meters, double hours, double minutes, double seconds){
+        double result1 = meters / (hours*3600 + minutes*60 + seconds);
+        return result1;
+    }
+
+    public static double speed2(int meters, double hours, double minutes, double seconds){
+        double result2 = (meters / 1000f) / (hours + minutes/60 + seconds/3600);
+        return result2;
+    }
+
+    public static double speed3(int meters, double hours, double minutes, double seconds){
+        double result2 = (meters / 1000f) / (hours + minutes/60 + seconds/3600);
+        double result3 = result2/1.609;
+        return result3;
     }
 }
